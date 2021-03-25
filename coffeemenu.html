@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+            }
+    </style>
+    <script>
+        function calcNow() {
+            var m1 = document.getElementById("americano").value;
+            var m2 = document.getElementById("latte").value;
+            var m3 = document.getElementById("straw_banana").value;
+
+            var s1 = m1 * 2500;
+            var s2 = m2 * 3000;
+            var s3 = m3 * 4500;
+
+            document.getElementById("am_sum").value=s1;
+            document.getElementById("la_sum").value=s2;
+            document.getElementById("st_sum").value=s3;
+
+            document.getElementById("result_cnt").value=parseInt(m1)+parseInt(m2)+parseInt(m3);
+            document.getElementById("result_sum").value=parseInt(s1)+parseInt(s2)+parseInt(s3);
+        }
+        
+    </script>
+
+</head>
+<body>
+    <form action="#" method="GET">
+        <table>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+            <tr>
+                <td>아메리카노</td>
+                <td>2500</td>
+                <td><input type="text" id="americano" value="0" onclick="this.select()"></td>
+                <td><input type="text" readonly id="am_sum" value="0"></td>
+            </tr>
+            <tr>
+                <td>라떼</td>
+                <td>3000</td>
+                <td><input type="text" id="latte" value="0" onclick="this.select()"></td>
+                <td><input type="text" readonly id="la_sum" value="0"></td>
+            </tr>
+            <tr>
+                <td>딸바</td>
+                <td>4500</td>
+                <td><input type="text" id="straw_banana" value="0" onclick="this.select()"></td>
+                <td><input type="text" readonly id="st_sum" value="0"></td>
+            </tr>
+            <tr>
+                <td>합계</td>
+                <td></td>
+                <td><input type="text" readonly id="result_cnt" value="0"></td>
+                <td><input type="text" readonly id="result_sum" value="0"></td>
+            </tr>
+        </table>
+        <input type="button" value="계산하기" id="sum" onclick="calcNow()">
+        <input type="reset" value="초기화">
+    </form>
+
+
+</body>
+</html>

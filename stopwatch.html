@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <script>
+        var count = 0;
+        function cnt() {
+            count++;
+            document.getElementById("watch").value = count;
+        } 
+        function start(){
+            var Timer = setInterval(cnt,1000);
+            document.getElementById("stop").onclick = function(){
+                clearInterval(Timer);
+            }
+        }
+        function reset(){
+            document.getElementById("watch").value = "0";
+        }
+        
+
+        
+        
+    </script>
+</head>
+<body>
+    <h2>Stopwatch</h2>
+    <input type="button" value="시작" id="start" onclick="start()">
+    <input type="button" value="멈춤" id="stop" >
+    <input type="button" value="초기화" id="reset" onclick="reset()"><br>
+    <input type="text" readonly id="watch" value="0"> seconds
+</body>
+</html>
